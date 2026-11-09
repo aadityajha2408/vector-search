@@ -1,0 +1,30 @@
+{
+  "BM25": {
+    "MRR@10": 0.7317,
+    "nDCG@10": 0.7596,
+    "Recall@10": 0.8703,
+    "Recall@100": 0.9492,
+    "ms/query": 6.007
+  },
+  "TF-IDF": {
+    "MRR@10": 0.6912,
+    "nDCG@10": 0.7253,
+    "Recall@10": 0.854,
+    "Recall@100": 0.9472,
+    "ms/query": 5.291
+  },
+  "Dense exact (cpp)": {
+    "MRR@10": 0.8931,
+    "nDCG@10": 0.9108,
+    "Recall@10": 0.9753,
+    "Recall@100": 0.9922,
+    "ms/query": 7.86
+  },
+  "Hybrid RRF (BM25 + dense)": {
+    "MRR@10": 0.8442,
+    "nDCG@10": 0.868,
+    "Recall@10": 0.9572,
+    "Recall@100": 0.9937,
+    "ms/query": 0.0
+  }
+}

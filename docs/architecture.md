@@ -25,9 +25,9 @@ data/raw (MS MARCO)                                   data/processed
 
 - **Row index == line number == embedding row.** Search code returns row numbers; the evaluator maps rows to pids via the corpus file order. Never reorder corpus.tsv.
 - **Vectors are L2-normalised**, so inner product equals cosine similarity and the C++ code needs only a dot product.
-- **Exact C++ search** keeps a size-k min-heap per query (O(N log k)) and tiles queries in blocks of 8 so each corpus vector is loaded once per block.
+- **Exact C++ search** keeps a size-k min-heap per query (O(N log k)), tiles queries in blocks of 8 so each corpus vector is loaded once per block, and uses AVX2 intrinsics for the dot product.
 - **HNSW**: multi-layer proximity graph; greedy descent on sparse upper layers, beam search (`ef`) on layer 0. Neighbour selection uses the diversity heuristic (ablation: `--no-heuristic`).
-- **RRF** fuses ranks, not scores, because BM25 scores and cosine similarities are on different scales.
+- **RRF** fuses ranks, not scores, because BM25 scores and cosine similarities are on different scales. Per-system weights are tuned on half the queries and reported on the other half.
 
 ## Known limitations / next optimisations
 

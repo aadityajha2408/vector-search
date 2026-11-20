@@ -1,30 +1,85 @@
 {
-  "BM25": {
-    "MRR@10": 0.7317,
-    "nDCG@10": 0.7596,
-    "Recall@10": 0.8703,
-    "Recall@100": 0.9492,
-    "ms/query": 6.007
+  "all_queries": {
+    "BM25": {
+      "MRR@10": 0.7317,
+      "nDCG@10": 0.7596,
+      "Recall@10": 0.8703,
+      "Recall@100": 0.9492,
+      "ms/query": 5.329
+    },
+    "TF-IDF": {
+      "MRR@10": 0.6912,
+      "nDCG@10": 0.7253,
+      "Recall@10": 0.854,
+      "Recall@100": 0.9472,
+      "ms/query": 5.206
+    },
+    "Dense exact (cpp)": {
+      "MRR@10": 0.8931,
+      "nDCG@10": 0.9108,
+      "Recall@10": 0.9753,
+      "Recall@100": 0.9922,
+      "ms/query": 8.091
+    },
+    "Hybrid RRF, equal weights": {
+      "MRR@10": 0.8442,
+      "nDCG@10": 0.868,
+      "Recall@10": 0.9572,
+      "Recall@100": 0.9937,
+      "ms/query": 0.0
+    },
+    "HNSW ours (ef=100, 1 thread)": {
+      "MRR@10": 0.8875,
+      "nDCG@10": 0.9048,
+      "Recall@10": 0.9683,
+      "Recall@100": 0.9832,
+      "ms/query": 1.716
+    },
+    "HNSW ours (ef=200, 1 thread)": {
+      "MRR@10": 0.891,
+      "nDCG@10": 0.9084,
+      "Recall@10": 0.9723,
+      "Recall@100": 0.9872,
+      "ms/query": 2.798
+    },
+    "HNSW ours (ef=400, 1 thread)": {
+      "MRR@10": 0.893,
+      "nDCG@10": 0.9104,
+      "Recall@10": 0.9743,
+      "Recall@100": 0.9902,
+      "ms/query": 4.969
+    }
   },
-  "TF-IDF": {
-    "MRR@10": 0.6912,
-    "nDCG@10": 0.7253,
-    "Recall@10": 0.854,
-    "Recall@100": 0.9472,
-    "ms/query": 5.291
-  },
-  "Dense exact (cpp)": {
-    "MRR@10": 0.8931,
-    "nDCG@10": 0.9108,
-    "Recall@10": 0.9753,
-    "Recall@100": 0.9922,
-    "ms/query": 7.86
-  },
-  "Hybrid RRF (BM25 + dense)": {
-    "MRR@10": 0.8442,
-    "nDCG@10": 0.868,
-    "Recall@10": 0.9572,
-    "Recall@100": 0.9937,
-    "ms/query": 0.0
+  "held_out_half": {
+    "BM25": {
+      "MRR@10": 0.7408,
+      "nDCG@10": 0.7673,
+      "Recall@10": 0.873,
+      "Recall@100": 0.954
+    },
+    "TF-IDF": {
+      "MRR@10": 0.7034,
+      "nDCG@10": 0.7352,
+      "Recall@10": 0.8553,
+      "Recall@100": 0.951
+    },
+    "Dense exact": {
+      "MRR@10": 0.8967,
+      "nDCG@10": 0.9121,
+      "Recall@10": 0.9733,
+      "Recall@100": 0.989
+    },
+    "Hybrid RRF, equal weights": {
+      "MRR@10": 0.8482,
+      "nDCG@10": 0.8706,
+      "Recall@10": 0.958,
+      "Recall@100": 0.992
+    },
+    "Hybrid RRF, dense weight 8.0": {
+      "MRR@10": 0.8972,
+      "nDCG@10": 0.9142,
+      "Recall@10": 0.9783,
+      "Recall@100": 0.989
+    }
   }
 }

@@ -1,0 +1,7 @@
+index,M,ef_construction,ef,recall,qps,build_s,heuristic
+ours,8,200,10,0.7615,10450.3,38.68,True
+ours,8,200,20,0.8551,6712.3,38.68,True
+ours,8,200,40,0.9162,4806.1,38.68,True
+ours,8,200,80,0.9519,2631.7,38.68,True
+ours,8,200,160,0.9732,1429.8,38.68,True
+ours,8,200,320,0.9865,805.2,38.68,True

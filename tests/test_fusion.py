@@ -26,3 +26,16 @@ def test_batch_shape():
     s1 = np.array([[1, 2], [3, 4]])
     s2 = np.array([[2, 1], [4, 3]])
     assert rrf_batch([s1, s2], top_k=2).shape == (2, 2)
+
+
+def test_weight_lets_the_stronger_system_win_a_disagreement():
+    a = np.array([1, 2])
+    b = np.array([2, 1])
+    assert rrf_single([a, b], top_k=2, weights=[1.0, 3.0])[0] == 2
+    assert rrf_single([a, b], top_k=2, weights=[3.0, 1.0])[0] == 1
+
+
+def test_wrong_number_of_weights_rejected():
+    import pytest
+    with pytest.raises(ValueError):
+        rrf_single([np.array([1])], weights=[1.0, 2.0])

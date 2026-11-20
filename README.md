@@ -3,7 +3,7 @@
 Hybrid semantic search over a 50K-passage MS MARCO subset, built around a from-scratch C++17
 vector search core (exact top-k and HNSW) with Python bindings (pybind11).
 
-**Environment:** Windows, MSVC 14.29 (VS 2019 Build Tools), Python 3.13.8, 4 logical processors, [CPU model].
+**Environment:** Windows, MSVC 14.29 (VS 2019 Build Tools), Python 3.13.8, 4 logical processors, [11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz].
 All timings are single runs on one laptop unless stated, so treat differences under ~10% as noise.
 
 ## What is in here
